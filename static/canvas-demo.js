@@ -100,10 +100,10 @@ function predict() {
         data:{
             mat:s
         },
+        method:"POST",
         success:res=>{
             console.log(res);
             result.innerText = "Result: " + res.prediction;
-        },
-        timeout:500
+        }
     })
 }

@@ -1,5 +1,4 @@
 from flask import Flask,render_template,jsonify,request
-from random import randint
 import numpy as np
 
 class ProxyMLP:
@@ -12,7 +11,7 @@ class ProxyMLP:
             tmp = np.dot(tmp,c)
         return tmp.argmax() + 1
 
-clf = ProxyMLP( np.load( "./tmp.npy" ,allow_pickle=1 ) )
+clf = ProxyMLP( np.load( "tmp.npy" ,allow_pickle=1 ) )
 
 
 app = Flask(__name__)
@@ -23,9 +22,9 @@ def index():
     return render_template("canvas-demo.html")
 
 
-@app.route("/predict")
+@app.route("/predict",methods=["POST"])
 def predict_api():
-    mat = request.args.get("mat")
+    mat = request.form.get('mat')
     if mat is None:
         return '',404
     print(mat)
