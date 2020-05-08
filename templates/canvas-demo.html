@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>画板</title>
+    <style type="text/css">
+        .icon {
+            width: 1em; height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        *{margin:0;padding: 0;}
+        ul,ol{list-style: none;}
+        #canvas{
+            background: white;
+            display: block;
+            overflow: hidden;
+            border: black solid 1px;
+        }
+        .actions{
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .actions> svg{
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: 0.5rem 1rem;
+            transition: all 0.3s;
+        }
+        .actions svg.active{
+            fill: orangered;
+            transform: scale(1.4);
+        }
+        .colors{
+            position: fixed;
+            top: 4rem;
+            left: 0.5rem;
+        }
+        .colors>li{
+            margin: 1rem 0;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 3px black;
+
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<button id="clear">clear</button>
+<span id="result">Result:</span>
+<canvas id="canvas" width="160" height="160"></canvas>
+
+<script src="../static/canvas-demo.js"></script>
+
+</body>
+</html>
